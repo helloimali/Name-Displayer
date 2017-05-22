@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <title>ConCap Graph</title>
+    <link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main container">
+        
+        <h1>Yearbook pick up</h1>
+        <br>
+        <div class="row">
+            
+        <div class="col-md-6">
+         <h6>Add name: <input id="name"></h6>
+        <button type="button" class="btn btn-primary" onclick="q()">Queue</button>
+        <button type="button" class="btn btn-primary" onclick="rfp()">Ready for pickup</button>
+            </div>
+            
+        <div class="col-md-6">
+                <h6>Delete number: <input id="del"> </h6>
+        <button type="button" class="btn btn-primary" onclick="delq()">Queue</button>
+        <button type="button" class="btn btn-primary" onclick="delrfp()">Ready for pickup</button>    
+        </div>
+        
+        </div>
+
+
+    
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="container">
+        <div class="full col-md-6">
+            <h3 class="center">Queue</h3>
+            <ol type="1" id="qlist">
+
+            </ol>
+        </div>
+    
+        <div class="line full col-md-6 container">
+            <h3 class="center">Ready for pickup</h3>
+            <ol type="1" id="rfplist">
+
+            </ol>
+        </div>
+        </div>
+    </div>
+
+    
+    <br>
+      <section class="main-content">
+<center>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/helloimali/Name-Displayer">Name Displayer</a> is maintained by <a href="https://github.com/helloimali">helloimali</a>.</span>
+      </footer>
+</center>
+    </section>
+    
+    
+</body>
+    
+    <script>
+
+
+        function delq(){
+            var dela = Number(document.getElementById("del").value);
+            console.log(dela);
+            document.getElementById("qlist").removeChild(document.getElementById("qlist").childNodes[dela]);    
+        }
+        
+        function delrfp(){
+             var dela = Number(document.getElementById("del").value);
+            console.log(dela);
+            document.getElementById("rfplist").removeChild(document.getElementById("rfplist").childNodes[dela]); 
+        }
+        
+        function q(){
+            document.getElementById("name");
+            var list = document.createElement("LI");
+            var text = document.createTextNode( document.getElementById("name").value);
+            list.appendChild(text);
+            
+            document.getElementById("qlist").appendChild(list);
+        }
+        
+        function rfp(){
+            document.getElementById("name");
+            var list = document.createElement("LI");
+            var text = document.createTextNode( document.getElementById("name").value);
+            list.appendChild(text);
+            document.getElementById("rfplist").appendChild(list);
+            
+        }
+        
+        
+    </script>
+    
+    <style>
+        .center{
+            text-align: center;
+        }
+        .main{
+         text-align: center;   
+        }
+        h1{
+            text-align: center;
+            font-size: 80px;
+        }
+  
+        .full{
+            height: 56%;
+
+        }
+        .line{
+            border-left: 3px dashed #333;
+        }
+        
+        li{
+            font-size: 47px;    
+        }
+        
+    </style>
+    
+</html>
